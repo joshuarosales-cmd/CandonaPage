@@ -1,0 +1,22 @@
+# Sitemap para La Candona - Desarrollo Web Guatemala
+# https://lacandona.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lacandona.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (si existen en el futuro)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important pages
+Allow: /
+Allow: /servicios
+Allow: /beneficios
+Allow: /proceso
+Allow: /contacto
