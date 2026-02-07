@@ -1,11 +1,11 @@
 # Sitemap para La Candona - Desarrollo Web Guatemala
-# https://lacandona.com
+# https://lacandona.me
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://lacandona.com/sitemap.xml
+Sitemap: https://lacandona.me/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
