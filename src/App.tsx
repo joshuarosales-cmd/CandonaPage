@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Analytics } from "@vercel/analytics/react"
 import { Navbar } from './sections/Navbar';
 import { Hero } from './sections/Hero';
 import { Packages } from './sections/Packages';
@@ -30,6 +31,7 @@ function App() {
             </main>
             <Footer />
             <WhatsAppButton />
+            <Analytics />
             <Toaster position="bottom-right" />
         </div>
     );
