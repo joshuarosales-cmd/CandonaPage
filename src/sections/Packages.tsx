@@ -204,7 +204,7 @@ export function Packages() {
 
                     {/* CTA Button */}
                     <a
-                      href={`https://wa.me/50258660396?text=Hola%20La%20Candona,%20me%20interesa%20el%20${encodeURIComponent(pkg.name)}`}
+                      href={`https://wa.me/50258660396?text=%C2%A1Hola%20La%20Candona!%20%F0%9F%91%8B%20Me%20interesa%20el%20plan%20*${encodeURIComponent(pkg.name)}*.%20%C2%BFQu%C3%A9%20informaci%C3%B3n%20necesito%20enviarles%20para%20comenzar?`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`mt-6 w-full py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 block ${pkg.popular
@@ -225,7 +225,7 @@ export function Packages() {
             <p className="text-gray-500 text-sm">
               ¿Necesitas algo personalizado?{' '}
               <a
-                href="https://wa.me/50258660396?text=Hola%20La%20Candona,%20necesito%20un%20presupuesto%20personalizado"
+                href="https://wa.me/50258660396?text=Hola%2C%20necesito%20un%20*presupuesto%20personalizado*%20para%20un%20proyecto%20web%20especial.%20Me%20gustar%C3%ADa%20platicar%20sobre%20mis%20requerimientos.%20%F0%9F%92%BB"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-red-600 font-semibold hover:underline"

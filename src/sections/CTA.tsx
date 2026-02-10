@@ -77,7 +77,7 @@ export function CTA() {
 
                 {/* CTA Button */}
                 <a
-                  href="https://wa.me/50258660396?text=Hola%20La%20Candona,%20quiero%20solicitar%20mi%20demo%20gratuita"
+                  href="https://wa.me/50258660396?text=%C2%A1Hola!%20%F0%9F%9A%80%20Me%20encantar%C3%ADa%20solicitar%20una%20*demo%20gratuita*%20para%20mi%20negocio.%20Vi%20que%20ofrecen%20desarrollo%20r%C3%A1pido%20y%20profesional%20en%20Guatemala."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-red-600 text-white text-lg font-semibold px-8 py-4 rounded-2xl hover:bg-red-700 transition-all duration-300 hover:shadow-xl hover:shadow-red-600/25 hover:scale-105 group"

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowRight, MessageCircle, Sparkles, Zap, Shield, Clock } from 'lucide-react';
+import { ArrowRight, MessageCircle, Sparkles, Zap, Shield, Clock, Star } from 'lucide-react';
 import { useCurrency } from '../context/CurrencyContext';
 
 export function Hero() {
@@ -28,12 +28,13 @@ export function Hero() {
     <section
       id="hero"
       ref={heroRef}
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col pt-20 overflow-hidden"
     >
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-red-50/50" />
+      <div className="absolute inset-0 bg-background" />
 
       {/* Animated Background Shapes */}
+      {/* ... (existing background shapes) ... */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-red-200/30 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-300/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
@@ -51,23 +52,23 @@ export function Hero() {
 
       {/* Floating Elements */}
       <div className="absolute top-32 right-20 hidden lg:block animate-float">
-        <div className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-red-100">
+        <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-red-100 dark:border-red-900/30">
           <Zap className="w-8 h-8 text-red-500" />
         </div>
       </div>
       <div className="absolute bottom-40 left-20 hidden lg:block animate-float" style={{ animationDelay: '1s' }}>
-        <div className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-red-100">
+        <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-red-100 dark:border-red-900/30">
           <Shield className="w-8 h-8 text-red-500" />
         </div>
       </div>
       <div className="absolute top-1/3 right-1/4 hidden lg:block animate-float" style={{ animationDelay: '2s' }}>
-        <div className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-red-100">
+        <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-red-100 dark:border-red-900/30">
           <Clock className="w-8 h-8 text-red-500" />
         </div>
       </div>
 
-      <div className="relative w-full section-padding">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative w-full section-padding flex-1 flex items-center py-12 lg:py-20 mb-20 lg:mb-32">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="text-center lg:text-left">
@@ -80,16 +81,16 @@ export function Hero() {
               </div>
 
               {/* Main Title */}
-              <h1 className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+              <h1 className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6">
                 Tu página web profesional desde{' '}
                 <span className="text-gradient">{formatPrice(399)}</span>
-                <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-600 mt-2">
+                <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-600 dark:text-gray-400 mt-2">
                   Entrega rápida en Guatemala
                 </span>
               </h1>
 
               {/* Subtitle */}
-              <p className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
+              <p className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0">
                 Diseñamos páginas web modernas para emprendedores y negocios.
                 Incluye hosting, dominio y soporte.
               </p>
@@ -97,20 +98,20 @@ export function Hero() {
               {/* CTA Buttons */}
               <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <a
-                  href="https://wa.me/50258660396?text=Hola%20La%20Candona,%20quiero%20solicitar%20una%20demo%20gratis"
+                  href="https://wa.me/50258660396?text=%C2%A1Hola!%20%F0%9F%9A%80%20Me%20encantar%C3%ADa%20solicitar%20una%20*demo%20gratuita*%20para%20mi%20negocio.%20Vi%20que%20ofrecen%20desarrollo%20r%C3%A1pido%20y%20profesional%20en%20Guatemala."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary flex items-center justify-center gap-2 text-lg group"
+                  className="btn-primary btn-glow flex items-center justify-center gap-2 text-lg group"
                 >
                   <Sparkles className="w-5 h-5 transition-transform group-hover:rotate-12" />
                   Solicitar demo gratis
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
-                  href="https://wa.me/50258660396?text=Hola%20La%20Candona,%20tengo%20una%20consulta"
+                  href="https://wa.me/50258660396?text=%C2%A1Hola!%20%F0%9F%91%8B%20Vi%20el%20sitio%20de%20La%20Candona%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20mi%20p%C3%A1gina%20web%20profesional.%20%C2%BFMe%20podr%C3%ADan%20ayudar?"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline flex items-center justify-center gap-2 text-lg"
+                  className="btn-outline flex items-center justify-center gap-2 text-lg px-6 py-3 rounded-xl dark:border-red-500 dark:text-red-500 hover:bg-red-500 hover:text-white transition-all transform active:scale-95"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Hablar por WhatsApp
@@ -118,23 +119,16 @@ export function Hero() {
               </div>
 
               {/* Demo Note */}
-              <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-400">
-                <div className="inline-flex items-center gap-3 bg-green-50 border border-green-200 text-green-800 px-5 py-3 rounded-xl">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-sm font-medium">
-                    Creamos una demo completamente gratuita donde mostramos cómo podría verse tu página
-                  </span>
-                </div>
-              </div>
+
 
               {/* Trust Indicators */}
-              <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-500 mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6">
-                <div className="flex items-center gap-2 text-gray-600">
+              <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-500 mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6 pb-12">
+                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                   <div className="flex -space-x-2">
                     {[1, 2, 3, 4].map((i) => (
                       <div
                         key={i}
-                        className="w-8 h-8 rounded-full bg-gradient-to-br from-red-400 to-red-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold"
+                        className="w-8 h-8 rounded-full bg-gradient-to-br from-red-400 to-red-600 border-2 border-white dark:border-gray-900 flex items-center justify-center text-white text-xs font-bold"
                       >
                         {String.fromCharCode(64 + i)}
                       </div>
@@ -142,7 +136,7 @@ export function Hero() {
                   </div>
                   <span className="text-sm font-medium">+50 clientes satisfechos</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-600">
+                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                   <div className="flex gap-1">
                     {[1, 2, 3, 4, 5].map((i) => (
                       <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -159,7 +153,7 @@ export function Hero() {
             <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300 hidden lg:block">
               <div className="relative">
                 {/* Main Browser Mockup */}
-                <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+                <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden shimmer-effect">
                   {/* Browser Header */}
                   <div className="bg-gray-100 px-4 py-3 flex items-center gap-2 border-b border-gray-200">
                     <div className="flex gap-2">
@@ -203,31 +197,41 @@ export function Hero() {
                       </div>
                     </div>
                   </div>
+                  <div className="p-4 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+                    <img
+                      src="/screenshot-preview.png"
+                      alt="Website Preview"
+                      loading="lazy"
+                      className="w-full h-auto rounded-lg shadow-sm border border-gray-100 dark:border-gray-800"
+                    />
+                  </div>
                 </div>
 
                 {/* Floating Cards */}
-                <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-4 border border-gray-100 animate-float">
+                <div className="absolute -top-6 -right-6 bg-card text-card-foreground rounded-xl shadow-xl p-4 border border-border animate-float">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
+                      <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-900">¡Sitio en línea!</div>
-                      <div className="text-xs text-gray-500">Entrega completada</div>
+                      <div className="text-sm font-semibold">¡Sitio en línea!</div>
+                      <div className="text-xs text-muted-foreground">Entrega completada</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl p-4 border border-gray-100 animate-float" style={{ animationDelay: '1.5s' }}>
+                <div className="absolute -bottom-6 -left-6 bg-card text-card-foreground rounded-xl shadow-xl p-4 border border-border animate-float delay-300">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
-                      <Zap className="w-5 h-5 text-red-600" />
+                    <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                      <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-900">Rápido</div>
-                      <div className="text-xs text-gray-500">Entrega en días</div>
+                      <div className="text-sm font-semibold text-foreground">Velocidad 99%</div>
+                      <div className="text-xs text-muted-foreground">Google PageSpeed</div>
                     </div>
                   </div>
                 </div>
@@ -237,7 +241,36 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom Wave */}
+      {/* Social Proof Marquee */}
+      <div className="absolute bottom-6 sm:bottom-20 left-0 right-0 bg-white/70 dark:bg-background/80 backdrop-blur-xl border-y border-red-100 dark:border-red-900/30 py-3 sm:py-5 overflow-hidden z-10">
+        <div className="animate-marquee whitespace-nowrap flex items-center gap-8 sm:gap-16 px-4">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="flex items-center gap-8 sm:gap-16 shrink-0">
+              <span className="flex items-center gap-2 text-red-600 dark:text-red-500 font-black text-xs sm:text-sm uppercase tracking-wider">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
+                Demos Gratis en 24h
+              </span>
+              <span className="h-4 w-px bg-red-100 dark:bg-red-900/50" />
+              <span className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-bold text-xs sm:text-sm uppercase tracking-wider">
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-red-500" />
+                Dominio .com Incluido
+              </span>
+              <span className="h-4 w-px bg-red-100 dark:bg-red-900/50" />
+              <span className="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-bold text-xs sm:text-sm uppercase tracking-wider">
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-red-500" />
+                Soporte Local 24/7
+              </span>
+              <span className="h-4 w-px bg-red-100 dark:bg-red-900/50" />
+              <span className="flex items-center gap-2 text-red-600 dark:text-red-500 font-black text-xs sm:text-sm uppercase tracking-wider">
+                <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
+                Diseño Premium Q399
+              </span>
+              <span className="h-4 w-px bg-red-100 dark:bg-red-900/50" />
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <path

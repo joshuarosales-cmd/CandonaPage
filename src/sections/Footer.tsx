@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { useCurrency } from '../context/CurrencyContext';
 
@@ -15,9 +16,9 @@ export function Footer() {
   const quickLinks = [
     { label: 'Inicio', id: 'hero' },
     { label: 'Paquetes', id: 'packages' },
-    { label: 'Beneficios', id: 'benefits' },
-    { label: 'Proceso', id: 'process' },
-    { label: 'Contacto', id: 'cta' },
+    { label: 'Portafolio', id: 'portfolio' },
+    { label: 'Calculadora', id: 'calculadora', isPage: true },
+    { label: 'FAQ', id: 'faq' },
   ];
 
   const services = [
@@ -34,13 +35,14 @@ export function Footer() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
             {/* Brand */}
+            {/* ... (no changes needed for brand) ... */}
             <div className="lg:col-span-1">
-              <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }} className="flex items-center gap-3 mb-6 group">
+              <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 mb-6 group">
                 <img
                   src="/LogoCandona.png"
                   alt="La Candona Logo"
                   className="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
-              </a>
+              </Link>
               <p className="text-gray-400 mb-6 leading-relaxed">
                 Desarrollo web profesional para emprendedores y negocios en Guatemala.
                 Tu presencia online desde {formatPrice(399)}.
@@ -57,12 +59,22 @@ export function Footer() {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.id}>
-                    <button
-                      onClick={() => scrollToSection(link.id)}
-                      className="text-gray-400 hover:text-red-500 transition-colors text-sm"
-                    >
-                      {link.label}
-                    </button>
+                    {link.isPage ? (
+                      <Link
+                        to={`/${link.id}`}
+                        onClick={() => window.scrollTo(0, 0)}
+                        className="text-gray-400 hover:text-red-500 transition-colors text-sm"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => scrollToSection(link.id)}
+                        className="text-gray-400 hover:text-red-500 transition-colors text-sm"
+                      >
+                        {link.label}
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -97,7 +109,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://wa.me/50258660396"
+                    href="https://wa.me/50258660396?text=%C2%A1Hola!%20%F0%9F%91%8B%20Vi%20el%20sitio%20de%20La%20Candona%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20mi%20p%C3%A1gina%20web%20profesional.%20%C2%BFMe%20podr%C3%ADan%20ayudar?"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-gray-400 hover:text-red-500 transition-colors group"
@@ -110,7 +122,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://wa.me/50258660396"
+                    href="https://wa.me/50258660396?text=%C2%A1Hola!%20%F0%9F%91%8B%20Vi%20el%20sitio%20de%20La%20Candona%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20mi%20p%C3%A1gina%20web%20profesional.%20%C2%BFMe%20podr%C3%ADan%20ayudar?"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors mt-2"

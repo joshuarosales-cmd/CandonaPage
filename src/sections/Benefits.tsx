@@ -132,7 +132,7 @@ export function Benefits() {
                 Te avisamos con anticipación para que no pierdas tu sitio.
               </p>
               <a
-                href="https://wa.me/50258660396?text=Hola%20La%20Candona,%20tengo%20dudas%20sobre%20la%20renovación"
+                href="https://wa.me/50258660396?text=Hola%2C%20tengo%20dudas%20sobre%20el%20proceso%20de%20*renovaci%C3%B3n*%20de%20hosting%20y%20dominio%20despu%C3%A9s%20del%20primer%20a%C3%B1o.%20%C2%BFMe%20explican%20c%C3%B3mo%20funciona%3F"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-red-600 px-6 py-3 rounded-xl font-semibold hover:bg-red-50 transition-colors"
