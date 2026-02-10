@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
+import { useCurrency, CurrencyCode } from '../context/CurrencyContext';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { currency, setCurrency, availableCurrencies } = useCurrency();
+  const [isCurrencyMenuOpen, setIsCurrencyMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,6 +72,38 @@ export function Navbar() {
             ))}
           </div>
 
+          <div className="hidden md:flex items-center gap-4">
+            {/* Currency Selector Desktop */}
+            <div className="relative">
+              <button
+                onClick={() => setIsCurrencyMenuOpen(!isCurrencyMenuOpen)}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100 ${isScrolled ? 'text-gray-700' : 'text-gray-700'
+                  }`}
+              >
+                <Globe className="w-4 h-4 text-red-600" />
+                <span>{currency.code}</span>
+              </button>
+
+              {isCurrencyMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 w-40 bg-white rounded-xl shadow-xl border border-gray-100 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                  {availableCurrencies.map((c) => (
+                    <button
+                      key={c.code}
+                      onClick={() => {
+                        setCurrency(c.code as CurrencyCode);
+                        setIsCurrencyMenuOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors hover:bg-red-50 hover:text-red-600 ${currency.code === c.code ? 'text-red-600 font-bold' : 'text-gray-700'
+                        }`}
+                    >
+                      {c.label} ({c.symbol})
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
           {/* CTA Button Desktop */}
           <div className="hidden md:block">
             <a
@@ -109,6 +144,28 @@ export function Navbar() {
                 {link.label}
               </button>
             ))}
+            <div className="border-t border-gray-100 pt-4 mt-4">
+              <p className="text-xs font-semibold text-gray-400 px-4 mb-2 uppercase tracking-wider">Moneda</p>
+              <div className="grid grid-cols-2 gap-2 px-2">
+                {availableCurrencies.map((c) => (
+                  <button
+                    key={c.code}
+                    onClick={() => {
+                      setCurrency(c.code as CurrencyCode);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${currency.code === c.code
+                        ? 'bg-red-600 text-white'
+                        : 'bg-gray-50 text-gray-700 hover:bg-red-50 hover:text-red-600'
+                      }`}
+                  >
+                    <span>{c.code}</span>
+                    <span className="opacity-60">({c.symbol})</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <a
               href="https://wa.me/50258660396?text=Hola%20La%20Candona,%20quiero%20solicitar%20una%20demo%20gratis"
               target="_blank"

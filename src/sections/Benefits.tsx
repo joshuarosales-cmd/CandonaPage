@@ -1,13 +1,14 @@
 import { useEffect, useRef } from 'react';
-import { 
-  Server, 
-  Shield, 
-  RefreshCw, 
-  HeadphonesIcon, 
-  Eye, 
+import {
+  Server,
+  Shield,
+  RefreshCw,
+  HeadphonesIcon,
+  Eye,
   Gift,
   CheckCircle2
 } from 'lucide-react';
+import { useCurrency } from '../context/CurrencyContext';
 
 const benefits = [
   {
@@ -50,6 +51,7 @@ const benefits = [
 
 export function Benefits() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { formatPrice } = useCurrency();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -126,7 +128,7 @@ export function Benefits() {
                 ¿Y después del primer año?
               </h3>
               <p className="text-lg text-white/90 max-w-2xl mx-auto mb-6">
-                El renovar tu hosting y dominio tiene un costo aproximado de Q400 - Q600 por año. 
+                El renovar tu hosting y dominio tiene un costo aproximado de {formatPrice('Q400 - Q600')} por año.
                 Te avisamos con anticipación para que no pierdas tu sitio.
               </p>
               <a

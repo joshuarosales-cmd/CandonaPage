@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Check, Star, ShoppingCart, Briefcase, Store, User, Building2, Rocket } from 'lucide-react';
+import { useCurrency } from '../context/CurrencyContext';
 
 interface Package {
   id: string;
@@ -112,6 +113,7 @@ const packages: Package[] = [
 
 export function Packages() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { formatPrice } = useCurrency();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -183,7 +185,7 @@ export function Packages() {
                   {/* Price */}
                   <div className="px-6 py-4 border-b border-gray-100">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-bold text-gray-900">{pkg.price}</span>
+                      <span className="text-3xl font-bold text-gray-900">{formatPrice(pkg.price)}</span>
                     </div>
                   </div>
 
@@ -206,8 +208,8 @@ export function Packages() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`mt-6 w-full py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 block ${pkg.popular
-                          ? 'bg-red-600 text-white hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/25'
-                          : 'bg-gray-100 text-gray-700 hover:bg-red-50 hover:text-red-600'
+                        ? 'bg-red-600 text-white hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/25'
+                        : 'bg-gray-100 text-gray-700 hover:bg-red-50 hover:text-red-600'
                         }`}
                     >
                       Solicitar información

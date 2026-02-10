@@ -1,7 +1,9 @@
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { useCurrency } from '../context/CurrencyContext';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { formatPrice } = useCurrency();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -41,7 +43,7 @@ export function Footer() {
               </a>
               <p className="text-gray-400 mb-6 leading-relaxed">
                 Desarrollo web profesional para emprendedores y negocios en Guatemala.
-                Tu presencia online desde Q399.
+                Tu presencia online desde {formatPrice(399)}.
               </p>
               <div className="flex items-center gap-2 text-gray-400">
                 <MapPin className="w-4 h-4 text-red-500" />

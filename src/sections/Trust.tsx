@@ -9,6 +9,7 @@ import {
   Clock,
   ThumbsUp
 } from 'lucide-react';
+import { useCurrency } from '../context/CurrencyContext';
 
 const trustPoints = [
   {
@@ -42,6 +43,7 @@ const stats = [
 
 export function Trust() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { formatPrice } = useCurrency();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -111,7 +113,9 @@ export function Trust() {
                         {point.title}
                       </h3>
                       <p className="text-white/80 leading-relaxed">
-                        {point.description}
+                        {point.title === 'Precios accesibles'
+                          ? `Desde ${formatPrice(399)} puedes tener tu presencia online profesional. Sin costos ocultos.`
+                          : point.description}
                       </p>
                     </div>
                   </div>

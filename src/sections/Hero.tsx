@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight, MessageCircle, Sparkles, Zap, Shield, Clock } from 'lucide-react';
+import { useCurrency } from '../context/CurrencyContext';
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const { formatPrice } = useCurrency();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -80,7 +82,7 @@ export function Hero() {
               {/* Main Title */}
               <h1 className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
                 Tu página web profesional desde{' '}
-                <span className="text-gradient">Q399</span>
+                <span className="text-gradient">{formatPrice(399)}</span>
                 <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-600 mt-2">
                   Entrega rápida en Guatemala
                 </span>
