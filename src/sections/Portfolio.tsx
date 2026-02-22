@@ -5,7 +5,7 @@ const projects = [
     {
         title: 'Cafe El Injerto',
         category: 'E-commerce',
-        image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800',
+        image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=60&w=600',
         description: 'Tienda online premium para venta de café de exportación.',
         tags: ['React', 'Web-Vitals', 'Guatemala'],
         icon: Laptop
@@ -21,7 +21,7 @@ const projects = [
     {
         title: 'Inmobiliaria Central',
         category: 'Bienes Raíces',
-        image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
+        image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=60&w=600',
         description: 'Landing page de alta conversión para proyectos habitacionales.',
         tags: ['Landing Page', 'SEO', 'Leads'],
         icon: Smartphone
@@ -29,7 +29,7 @@ const projects = [
     {
         title: 'Fitness GT',
         category: 'Salud',
-        image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800',
+        image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=60&w=600',
         description: 'Plataforma para gimnasios con registro de usuarios.',
         tags: ['Web App', 'Member-Area', 'Custom'],
         icon: Eye
@@ -110,6 +110,8 @@ export function Portfolio() {
                                             src={project.image}
                                             alt={project.title}
                                             loading="lazy"
+                                            width="600"
+                                            height="375"
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">

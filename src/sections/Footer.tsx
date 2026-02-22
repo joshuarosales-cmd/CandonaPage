@@ -41,6 +41,8 @@ export function Footer() {
                 <img
                   src="/LogoCandona.png"
                   alt="La Candona Logo"
+                  width="40"
+                  height="40"
                   className="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
               </Link>
               <p className="text-gray-400 mb-6 leading-relaxed">

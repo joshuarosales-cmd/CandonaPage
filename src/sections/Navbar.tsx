@@ -83,6 +83,8 @@ export function Navbar() {
             <img
               src="/favicon.png"
               alt="La Candona"
+              width="40"
+              height="40"
               className="h-10 w-auto transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 relative z-10"
             />
             <span className="text-xl font-black tracking-tighter text-foreground hidden sm:block">

@@ -201,7 +201,9 @@ export function Hero() {
                     <img
                       src="/screenshot-preview.png"
                       alt="Website Preview"
-                      loading="lazy"
+                      width="1200"
+                      height="800"
+                      fetchPriority="high"
                       className="w-full h-auto rounded-lg shadow-sm border border-gray-100 dark:border-gray-800"
                     />
                   </div>
